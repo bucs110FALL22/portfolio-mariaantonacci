@@ -14,4 +14,4 @@ Preferred Name: Maria Antonacci
 
 Discord username: mariaantonacci
 
-REPL url: [https://replit.com/@MariaAntonacci1](https://replit.com/join/dvtpwafght-mariaantonacci1)
+REPL url: https://replit.com/join/dvtpwafght-mariaantonacci1
