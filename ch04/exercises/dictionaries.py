@@ -15,4 +15,4 @@ substitutions = {
 for key, value in substitutions.items():
    article = article.replace(key, value) 
 
- print(article) 
+print(article) 
