@@ -1,4 +1,5 @@
-import turtle #1. import modules
+import turtle 
+#1. import modules
 import random
 x = random.randrange(1,10)
 y = random.randrange(1,10)
@@ -38,11 +39,15 @@ pygame.init()
 window = pygame.display.set_mode()
 import math
 
+white = [255,255,255,255]
+pink = [255, 20, 147, 255]
+window.fill(white)
+
 #triangle
+coords=[]
 num_sides=3
 side_length=20
-coords=[]
-offset=0
+offset=100
 for i in range(num_sides):
   theta= (2.0 * math.pi * i / num_sides)
   x = side_length * math.cos(theta) + offset
@@ -50,15 +55,26 @@ for i in range(num_sides):
   coords_tri=(x,y)
   coords.append(coords_tri)
   
+pygame.draw.polygon(window, pink, coords)
+pygame.display.flip()
+pygame.time.wait(500)
+coords.clear()
+
 #square
-num_sidessq=4
-coords_sq=[]
-for i in range(num_sidessq):
-  theta= (2.0 * math.pi * i / num_sidessq)
+num_sides2=4
+coords_2=[]
+for i in range(num_sides2):
+  theta= (2.0 * math.pi * i / num_sides2)
   x = side_length * math.cos(theta) + offset
   y = side_length * math.sin(theta) + offset
   coords_square=(x,y)
   coords.append(coords_square)
+
+window.fill(white)
+pygame.draw.polygon(window, pink, coords)
+pygame.display.flip()
+pygame.time.wait(1000)
+coords.clear()
 
 #hexagon
 num_sideshex=6
@@ -70,6 +86,12 @@ for i in range(num_sideshex):
   coords_hex=(x,y)
   coords.append(coords_hex)
 
+window.fill(white)
+pygame.draw.polygon(window, pink, coords)
+pygame.display.flip()
+pygame.time.wait(1000)
+coords.clear()
+
 #nonagon
 num_sidesnon=9
 coords_non=[]
@@ -79,6 +101,12 @@ for i in range(num_sidesnon):
   y = side_length * math.sin(theta) + offset
   coords_non=(x,y)
   coords.append(coords_non)
+
+window.fill(white)
+pygame.draw.polygon(window, pink, coords)
+pygame.display.flip()
+pygame.time.wait(1000)
+coords.clear()
 
 #circle
 num_sidescirc=360
@@ -90,4 +118,8 @@ for i in range(num_sidescirc):
   coords_circ=(x,y)
   coords.append(coords_circ)
 
-window.exitonclick()
+window.fill(white)
+pygame.draw.polygon(window, pink, coords)
+pygame.display.flip()
+pygame.time.wait(1000)
+coords.clear()
