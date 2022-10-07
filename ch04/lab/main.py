@@ -6,7 +6,8 @@ width=400
 height=400
 
 pygame.init()
-window = pygame.display.set_mode((width, height))
+window = pygame.display.set_mode()
+windowsize = pygame.display.get_window_size()
 
 black=[0,0,0]
 red=[255, 48, 48, 255]
@@ -15,30 +16,61 @@ green=[34, 139, 34, 255]
 yellow=[255, 255, 224, 255]
 pink=[255, 20, 147, 255]
 
-red_button_box = pygame.Rect(0, height/4, height/2, width/2)
-blue_button_box = pygame.Rect(0, 0, height/2, width/2)
-blue_button_box.topleft = red_button_box.topright
-red_button = pygame.draw.rect(window, red, red_button_box)
-blue_button = pygame.draw.rect(window, blue, blue_button_box)
-pygame.display.flip()
+x=random.randrange(0, windowsize[0])
+y=random.randrange(0, windowsize[1])
 
-selection=0
-print("Who do you think will win?")
-while selection==0:
-  for event in pygame.event.get():
-    if event.type == pygame.buttondown:
-       mouse_click_pos = event.pos
-      if red_button_box.point(mouse_click_pos):
-        guess=1
-      if blue_button_box.point(mouse_click_pos):
-        guess=2
+center_x=windowsize[0]/2
+center_y=windowsize[1]/2
+radius = center_y
 
-screen.fill(pink)
-pygame.draw.circle(screen, yellow, (height/2, width/2), height/2)
-pygame.draw.line(screen, black, (0, height/2), (width, height/2))
-pygame.draw.line(screen, black, (width/2, 0), (width/2, height))
-pygame.display.flip()
+pygame.draw.circle(window, 'red', (center_x,center_y), radius)
+pygame.draw.line(window, 'blue', [0, center_y], [windowsize[0], center_y])
+pygame.draw.line(window, 'blue', [center_x, 0], [center_x, windowsize[1]])
 
-p1score = 0
-p2score = 0
+print(windowsize[0])
+print(windowsize[1])
 
+player1=0
+player2=0
+player1pink=pink
+player2yellow=yellow
+color3=green
+
+distance_center = math.hypot(windowsize[0]/2-x, windowsize[1]/2-y)
+print(distance_center)
+
+choice=int(input("Choose  player 1 or 2: "))
+
+is_in_circle = distance_center<=radius
+print(is_in_circle)
+
+for i in range(10):
+  x = random.randrange(0, windowsize[0])
+  y = random.randrange(0, windowsize[1])
+  distance_center = math.hypot(windowsize[0]/2-x, windowsize[1]/2-y)
+  if distance_center < radius:
+     pygame.draw.circle(window, player1pink, (x,y), 2)
+     player1 += 1
+  else:
+     pygame.draw.circle(window, color3, (x,y), 2)
+
+  x = random.randrange(0, windowsize[0])
+  y = random.randrange(0, windowsize[1])
+  pygame.draw.circle(window, 'black', (x,y), 2)
+  distance_center = math.hypot(windowsize[0]/2-x, windowsize[1]/2-y)
+  if distance_center < radius:
+    pygame.draw.circle(window, player2yellow, (x,y), 2)
+    player2 += 1
+  else:
+    pygame.draw.circle(window, color3, (x,y), 2)
+    pygame.display.flip()
+  if player1 > player2:
+   print("Player 1 won")
+   print("you predicted correctly") if choice == 1 else print("you   predicted incorrectly")
+  elif player1 < player2:
+   print("Player 2 won")
+   print("you predicted correctly") if choice == 2 else print("you   predicted incorrectly")
+  elif player1 == player2:
+   print("TIE!")
+
+pygame.time.wait(50000)
