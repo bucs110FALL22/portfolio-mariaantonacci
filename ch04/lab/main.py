@@ -39,7 +39,7 @@ color3=green
 distance_center = math.hypot(windowsize[0]/2-x, windowsize[1]/2-y)
 print(distance_center)
 
-choice=int(input("Choose  player 1 or 2: "))
+choice=int(input("Enter which player you think will win ... 1 or 2: "))
 
 is_in_circle = distance_center<=radius
 print(is_in_circle)

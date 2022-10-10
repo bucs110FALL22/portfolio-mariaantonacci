@@ -8,6 +8,9 @@ window.bgcolor("purple")
 leo.shape("turtle")
 leo.color("green")
 
+distance=10
+leo.speed(0)
+
 while True:
   coin = random.randint(1,2)
   a=150
