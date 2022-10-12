@@ -10,6 +10,6 @@ def rstar_pyramid():
   rows = int(input("How many rows?: "))
   for i in range (rows, 0, -1):
     for j in range(0, i):
-      print("*", end="")
+      print("*", end = "")
     print("\n")
 rstar_pyramid()
