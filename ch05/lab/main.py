@@ -1,13 +1,14 @@
 import pygame
 pygame.init()
-display = pygame.display.set_mode()
+display=pygame.display.set_mode()
 display.fill("pink")
+font=pygame.font.Font(None, 20)
 
 upper_limit = 20
 iters = {}
 max_so_far = 0
 max_val = 0
-scale = 23
+scale = 10
 
 for start in range(2, upper_limit + 1):
   display.fill("pink")
@@ -29,8 +30,10 @@ for start in range(2, upper_limit + 1):
   if count > max_so_far:
     max_so_far = count
     max_val = start
-  string = f"The value with the max iterations so far is {max_val} with {max_so_far} iterations"
+  string = f"The max iterations so far is {max_val} with {max_so_far} iterations"
+  msg=font.render(string, True, "white")
+  display.blit(msg, (10, 10))
   pygame.display.flip()
-  pygame.time.wait(500)
+  pygame.time.wait(700)
 print(iters)
 pygame.time.wait(5000)
