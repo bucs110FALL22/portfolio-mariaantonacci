@@ -2,3 +2,13 @@
 Preferred Name: Maria Antonacci  
 Discord username: mariaantonacci  
 REPL url: https://replit.com/join/owylqswczd-mariaantonacci1  
+
+# CS110 Midterm Exam
+
+## SHORT DESCRIPTION *(1 or 2 sentences describing your program)*
+
+## KNOWN BUGS AND INCOMPLETE PARTS *(list any known bugs or non-working parts)*
+
+## REFERENCES *(any resources you use outside of class materials)*
+
+## MISCELLANEOUS COMMENTS *(anything else you would like the grader to know)*
