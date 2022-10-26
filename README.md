@@ -5,7 +5,7 @@ REPL url: https://replit.com/join/owylqswczd-mariaantonacci1
 
 # CS110 Midterm Exam
 
-## SHORT DESCRIPTION *(1 or 2 sentences describing your program)*
+## SHORT DESCRIPTION * Drawing a house with some background details *
 
 ## KNOWN BUGS AND INCOMPLETE PARTS *(list any known bugs or non-working parts)*
 
