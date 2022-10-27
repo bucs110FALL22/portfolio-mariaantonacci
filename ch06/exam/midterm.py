@@ -1,20 +1,19 @@
 import turtle
 
-def background(screen):
-   x_pos = 800
-   y_pos = 800
-   screen.screensize(x_pos,y_pos,"white")
+lightblue=[191, 239, 255, 255]
 
 screen = turtle.Screen()
-turtle.speed(1)
+turtle.speed(10)
 
-turtle.pencolor("orange")
-turtle.penup()
-turtle.goto(-200,50)
-turtle.pendown()
+window = turtle.Screen()
+window.bgcolor("lightblue")
 
 #Sun
 def sun():
+  turtle.pencolor("orange")
+  turtle.penup()
+  turtle.goto(-200,50)
+  turtle.pendown()
   turtle.fillcolor("yellow")
   turtle.begin_fill()
   turtle.circle(50)
@@ -25,10 +24,10 @@ def sun():
     turtle.back(40)
     turtle.left(90)
     turtle.circle(50,20)
-    turtle.penup()
-    turtle.goto(0,0)
-    turtle.pendown()
-    turtle.color("black","yellow")
+  turtle.penup()
+  turtle.goto(0,0)
+  turtle.pendown()
+  turtle.color("black","brown")
 
 #Roof
 def roof():
@@ -37,7 +36,7 @@ def roof():
     turtle.forward(200)
     turtle.left(120)
   turtle.end_fill()
-  turtle.fillcolor("pink")
+  turtle.fillcolor("grey")
   turtle.right(90)
 
 #Base
@@ -47,7 +46,7 @@ def base():
     turtle.forward(200)
     turtle.left(90)
   turtle.end_fill()
-  turtle.color("black","orange")
+  turtle.color("black","brown")
   turtle.penup()
   turtle.goto(80,-120)
   turtle.pendown()
@@ -63,12 +62,6 @@ def door():
   turtle.end_fill()
 
 def main():
-  my_turtle = turtle.Turtle() 
-  my_turtle.shape('turtle')
-  my_turtle.speed(0)
-  turtle.speed(0)
-  screen = turtle.Screen()
-  background(screen)
   sun()
   roof()
   base()
