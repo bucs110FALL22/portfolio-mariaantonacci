@@ -1,9 +1,9 @@
 import turtle
 
 def background(screen):
-   x_size = 800
-   y_size = 800
-   screen.screensize(x_size,y_size,'white')
+   x_pos = 800
+   y_pos = 800
+   screen.screensize(x_pos,y_pos,"white")
 
 screen = turtle.Screen()
 turtle.speed(1)
@@ -12,7 +12,6 @@ turtle.pencolor("orange")
 turtle.penup()
 turtle.goto(-200,50)
 turtle.pendown()
-
 
 #Sun
 def sun():
