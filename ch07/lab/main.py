@@ -1,5 +1,5 @@
-from Rectangle import Rectangle
-from Surface import Surface
+from rectangle import Rectangle
+from surface import Surface
 
 def main():
    r = Rectangle(10, 10, 10, 10)
@@ -21,4 +21,4 @@ def main():
    print("Test Complete!")
 
 
- main()
+main()
