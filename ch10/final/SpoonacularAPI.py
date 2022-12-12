@@ -1,9 +1,17 @@
 import requests
 
-Class SpoonacularAPI():
+class SpoonacularAPI():
   def __init__(self):
-  self.api_url = https://spoonacular.com/food-api 
+    self.api_url = 'https://spoonacular.com/food-api' 
 
   def get(self):
-    self.output1 = requests.get(self.url).json()
-    print(self.output1)
+     response = requests.get(self.api_url).json()
+     result = response['text']
+     if response.get('text'):
+       return result
+     else:
+       return None
+
+  def __str__(self):
+     resultStr = f"{self.get()}"
+     return resultStr

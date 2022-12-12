@@ -1,11 +1,6 @@
-import NutritionixAPI
-import SpoonacularAPI
+import APIproxy
 
 def main():
-  output1=NutritionixAPI.NutritionixAPI()
-  output1=get()
-
-  output2=SpoonacularAPI.SpoonacularAPI()
-  output2=get()
+  APIproxy.controller()
 
 main()
